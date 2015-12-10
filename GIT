@@ -1,0 +1,13 @@
+Verzeichnis angelegt
+mkdir Verzeichnis
+
+cd Verzeichnis
+
+git init
+
+vorher muss auf GITHUB das repository eröffnet werden
+
+git remote add origin git://github.com/janfelixbinder/Hilfe.git
+
+Abholen vom Server (origin) zur lokalen Kopie (master)
+git pull origin master
