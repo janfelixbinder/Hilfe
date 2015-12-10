@@ -1,0 +1,38 @@
+\section{Zeichenbefehle}
+\subsection{Kreise}
+(x,y) circle (Radius)
+
+\subsection{Ellipse}
+(x,y) ellipse (Radius1 and Radius2)
+
+\subsection{Viereck}
+erste Koordinate Startpunkt zweite Diagonalle
+(x1,y1) rectangle (x2,y2)
+
+
+\subsection{Karomuster}
+{\draw[step=0.5cm,gray, very thin] (-1.5,-1.5) grid (1,5,1.5)
+
+\subsection{Kreisbogen}
+Startpunkt (x,y) zeichne einen Kreisbogen von $0^{\circ}$ bis $30^{\circ}$.
+{\draw (x,y) arc (0:30:5cm)}
+
+
+\subsection{Definitionen}
+
+\subsection{Koordinaten}
+{\coordinate (A) at (0,0);}
+{\coordinate [label=right:$A$] (A) at (0,0);}
+
+\subsection{Styles}
+see page 27
+
+
+
+\section{Bilder exportieren}
+siehe Beispiel auf Seite 344.
+
+pdflatex -shell-escape
+pdftops Fig2-figure0.pdf
+ps2eps Fig2-figure0.ps
+

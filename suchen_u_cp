@@ -1,0 +1,6 @@
+sucht alle mp3 dateien und kopiert sie in das angegebene Verzeichnis
+find Otfried\ Preussler/ -name "*.mp3" -exec cp  {} /media/felix/PHILIPS/ \;
+
+um die verzeichnisstruktur bezubehalten kann man das folgende benutzen
+find Otfried\ Preussler/ -name "*.mp3" -exec cp --parents {} /media/felix/PHILIPS/ \;
+

@@ -1,0 +1,6 @@
+alles im Ordner Apps
+
+
+./configure
+make
+sudo checkinstall

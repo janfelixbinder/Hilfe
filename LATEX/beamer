@@ -1,0 +1,14 @@
+
+
+Aufblätternde Aufzählungen
+
+\begin{itemize}
+
+\item irgendwas
+\item <2-> zweites
+
+\end{itemize}
+
+kann auch mit tikzpicture kombiniert werden. Innerhalb der TikZ-Umgebung benutzt man:
+\only<2>{\draw irgendwas;}
+dann erscheint es nur auf der zweiten seite

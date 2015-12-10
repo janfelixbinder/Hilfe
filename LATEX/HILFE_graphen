@@ -1,0 +1,50 @@
+			\begin{tikzpicture}[x=1cm, y=20cm, font=\sffamily]
+			
+			\def\defaultXaxisPos{0cm}%   y-position der x-achse
+			\def\defaultYaxisPos{1cm}%   x-position der y-achse
+			
+			%mesh
+			%\foreach \x in {-4,...,4} \draw [mmPapier] (\x,5) -- (\x,-5);
+			%\foreach \y in {2,4,...,12} \draw [mmPapier] (0,\y) -- (5.5,\y);
+
+			
+			%Balken des Histogramms. Siehe mathtikz.
+			\histBlock{2}{0.01}
+			\histBlock{3}{0.04}
+			\histBlock{4}{0.08}
+			\histBlock{5}{0.12}
+			\histBlock{6}{0.18}
+			\histBlock{7}{0.20}
+			\histBlock{8}{0.16}
+			\histBlock{9}{0.12}
+			\histBlock{10}{0.09}
+			
+			%x-Achse
+			\draw [->, force](1,\defaultXaxisPos) -- (11,\defaultXaxisPos) node [right] {$X$};
+			\foreach \x in {2,3,...,10} \draw (\x,1pt) -- (\x,-3pt) node [anchor=north] {\x};
+			%y-Achse
+			\draw [->, force](\defaultYaxisPos,0) -- (\defaultYaxisPos,0.23) node [above] {$P(X)$};
+			\foreach \y in {0.04,0.08,...,0.22} \draw (\defaultYaxisPos+1pt,\y) -- (\defaultYaxisPos-3pt,\y) node [anchor=east] {\num[dp=2]{\y}};
+
+
+	\end{tikzpicture}
+
+
+
+
+
+	\begin{tikzpicture}[font=\sffamily]
+			%mesh
+			\foreach \x in {-4,...,4} \draw [mmPapier] (\x,5) -- (\x,-5);
+			\foreach \y in {-4,...,4} \draw [mmPapier] (4,\y) -- (-4,\y);
+
+			%x-Achse
+			\draw [->, force](-5,0) -- (5,0) node [right] {$x$};
+			\foreach \x in {-4,...,-1,1,2,...,4} \draw (\x,1pt) -- (\x,-3pt) node [anchor=north] {\x};
+			%y-Achse
+			\draw [->, force](0,-5) -- (0,5) node [above] {$f(x)$};
+			\foreach \y in {-4,-3,-2,-1,1,2,3,4} \draw (1pt,\y) -- (3pt,\y) node [anchor=east] {\y};
+			
+			\clip (-5,5) rectangle (5,-5);
+			\draw[very thick,red] plot[raw gnuplot,id=poly3] function{ plot [-5:5] 3 +2*x - 4*x**2 + x**3};
+	\end{tikzpicture}

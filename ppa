@@ -1,0 +1,9 @@
+entfernen von ppa quellen
+
+
+sudo add-apt-repository --remove ppa:kubuntu-ppa/ppa
+
+
+
+hinzugefügt:
+sudo add-apt-repository ppa:kubuntu-ppa/backports

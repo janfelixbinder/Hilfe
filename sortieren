@@ -1,0 +1,8 @@
+sortiert die 9te Spalte nummerisch und schreibt dann die 2te, 1te und 9te spalte in die datei t
+
+cat 2D3.csv | sort -n -k 9 | awk '{ print $2"   "$1"  "$9 }' > t
+
+
+
+druckt die text datei Gruppen2D3 (erstellt eine postscript datei)
+a2ps -o Gruppen2D3.ps Gruppen2D3

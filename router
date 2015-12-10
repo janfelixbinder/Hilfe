@@ -1,0 +1,11 @@
+
+Mit netzwerkkabel
+Wireless router benutzen nicht access point mode, man braucht nicht die ip suchen und es scheint stabiler zu laufen
+
+
+vorhandenes wifi erweitern
+am besten hotspot mode verwenden
+
+
+Finde ASUS im Access Point mode
+nmap -sP 192.168.2.0/24

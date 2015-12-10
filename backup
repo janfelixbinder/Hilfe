@@ -1,0 +1,11 @@
+neues Backup-Skript auf Basis von BtrFS
+
+backup-home
+
+
+
+storeBackup -f Backup.conf
+
+zum wiederherstellen
+
+storeBackupRecover -r /backup -t /home/felix

@@ -1,0 +1,58 @@
+
+sudo mkfs.btrfs -L "HD" /dev/sda3
+
+
+felix@felix-530U3BI-530U4BI-530U4BH:~$ sudo btrfs filesystem show
+Label: 'HD'  uuid: 1dc106cc-2d1b-46aa-9be0-c222f49a9b59
+        Total devices 1 FS bytes used 112.00KiB
+        devid    1 size 460.86GiB used 20.00MiB path /dev/sda3
+
+
+
+
+#anlegen eines subvolumes
+
+sudo btrfs subvol create @jessie_00
+
+
+zeigt subvolumes an
+btrfs subvolume list /mnt/
+
+
+
+btrfs subvolume delete /backups/root_15-08-04_07-04/
+
+
+
+
+#snapshots
+btrfs subvolume snapshot / /snapshot_040815
+
+
+btrfs subvolume snapshot / /\@04
+
+
+
+btrfs subvolume snapshot /home /backups/home_`date +%y-%m-%d_%H-%M`
+btrfs subvolume snapshot / /backups/root_`date +%y-%m-%d_%H-%M`
+
+
+
+
+subvolumes
+.cache
+.thumbnails
+
+
+#erste mal
+#read-only -r subvolume
+btrfs subvolume snapshot -r /home /backups/home_`date +%y-%m-%d_%H-%M`
+sync
+btrfs send /backups/home_15-08-27_12-50/ | btrfs receive /media/felix/Backup
+
+
+#aenderungen uebertragen
+btrfs subvolume snapshot -r /home /backups/home_`date +%y-%m-%d_%H-%M`
+btrfs send -p /backups/home_15-08-27_12-50/ /backups/home_15-08-27_13-44/ | btrfs receive /media/felix/Backup/
+
+

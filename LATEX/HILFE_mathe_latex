@@ -1,0 +1,27 @@
+
+
+
+ist element von 	\in
+unendlich 			\infty
+
+ohne \ \setminus
+
+| 					\lvert für linkes und \rvert für rechts
+\left.  irgendwas \right\rvert  erzeugt nur auf der rechten seite einen grösseren strich
+
+%um Text über Formelteile/Formeln zu schreiben, z.B. zum besseren Verständnis
+\overset{Text über Formelteil}{Formelteil}
+\underset gleiche nur unter Formelteil
+
+
+align für mehrzeilige Formeln
+
+Gleichungssysteme
+		\begin{eqnarray*}
+			\left\lvert
+			\begin{array}{ccc}
+			3c_2  &- 1 c_3 &= -2\\
+			-1c_2 &- 2c_3  &= -5\\
+			\end{array}
+			\right\rvert
+		\end{eqnarray*}

@@ -1,0 +1,3 @@
+
+
+apt-get purge $(dpkg -l | awk '/^rc/ { print $2 }')

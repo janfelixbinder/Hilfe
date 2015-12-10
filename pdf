@@ -1,0 +1,16 @@
+
+A4->2xA5
+
+a5querto2xa4.sh
+
+pdf90 gas-atommodell.pdf --outfile gas-atommodellr.pdf
+pdfnup gas-atommodellr.pdf gas-atommodellr.pdf --nup '2x1' --landscape --outfile temp.pdf
+
+
+#extrahiert eine querformat a5 seite (hier seite 1)
+pdfjam bademeister.pdf '1' --a5paper --landscape --outfile t.pdf
+
+
+
+#Booklet erstellen A4->A5
+pdfbook dateiname.pdf

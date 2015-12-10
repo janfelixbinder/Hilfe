@@ -1,0 +1,8 @@
+sudo fdisk -l
+
+sudo dd if=Downloads/debian-8.1.0-amd64-netinst\(1\).iso of=/dev/sdc bs=1M && sync
+
+
+um den stick später wieder für andere Zwecke benutzen zu können, muss man zuerst die ersten Sektoren überschreiben
+
+dd if=/dev/zero of=/dev/sdc bs=3000 count=1

@@ -1,0 +1,55 @@
+alles an kammera einstellen, dann
+fuer x fotos mit einem intervall von sec sekunden
+gphoto2  -F x -I sec --capture-image
+
+
+
+#verkleinern mit convert
+for i in *.JPG ; do convert $i -resize 10% small/$i ; done
+
+
+
+Video zerlegen
+avconv -i 00034.MTS -same_quant  bild%5d.jpg
+
+
+ffmpeg -i 00034.MTS -sameq bild%5d.jpg
+
+
+
+-ss startzeit; -t endzeit; -r bilder/sekunde
+avconv -i kugel_auf_schieferebene.MTS -ss 00:00:28 -t 00:00:34 -r 10 -f image2 foo-%03d.jpeg
+
+for i in *.jpeg ; do convert $i -crop 1250x350+100+500 +repage crop/$i ; done
+
+dann latex beamer zu finden: /home/felix/GITHUB/Experimente_Mechanik/kugelbahn
+
+
+
+
+
+
+
+
+
+Video mit mencoder
+mencoder mf://*.JPG -mf w=800:h=600:fps=2:type=jpg -ovc lavc     -lavcopts vcodec=mpeg4:mbd=2:trell -oac copy -o output.avi
+
+mencoder 00006.MTS -o test.mpg -ovc lavc -ofps 25 -oac mp3lame -lavcopts acodec=mp2:abitrate=224:vcodec=mpeg1video:vbitrate=1728:keyint=15:mbd=2:aspect=4/3
+
+
+
+avconv -i 00001.MTS -strict experimental -s 800x600 output.mp4
+avconv -i 00001.MTS -b 256k o_b256.webm
+
+
+avconv -codecs
+
+
+#genau so machen nicht mit IMG* . dann werder alle Bilder nocheinmal übertragen
+#auch der / am Ende ist wichtig. Ohne wird ein Ornder angelegt.
+rsync -av --stats /media/felix/EOS_DIGITAL/DCIM/100CANON/ .
+
+
+
+convert -density 1000 emil_4x2.pdf emil_4x2.jpg
