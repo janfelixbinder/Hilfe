@@ -14,3 +14,11 @@ git pull origin master
 
 änderungen auf den Server übertragen
 git push
+
+
+
+
+#befehle für simulations verzeichnisse
+rückgängig machen
+git reset --hard
+git clean -f -d .

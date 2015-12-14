@@ -1,0 +1,9 @@
+Tutorial
+https://openfoamwiki.net/index.php/2D_Mesh_Tutorial_using_GMSH
+
+
+Endung für gmsh *.geo
+das Meshfile hat dann aber die Endung *.msh
+
+erzeugt ein 3d mesh dies wird für openfoam benötig, auch wenn es nur 2d ist
+gmsh -3 rohr2D.geo
