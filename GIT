@@ -22,3 +22,7 @@ git push
 rückgängig machen
 git reset --hard
 git clean -f -d .
+
+
+#kopiert dateien und verzeichniss in ein neues arbeitsverzeichnis
+git --work-tree=../rechterWinkel checkout HEAD -- .

@@ -1,0 +1,7 @@
+Gutes Buch zu openFoam
+https://github.com/ParticulateFlow/OSCCAR-doc/blob/master/openFoamUserManual_PFM.pdf
+
+
+
+löschen der berechneten zeiten
+rm -rf *[1-9]*
