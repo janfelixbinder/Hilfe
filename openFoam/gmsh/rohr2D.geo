@@ -1,8 +1,8 @@
 // Inputs
-L = 200; //Länge m
-d = 50; //Durchmesser
+L = 2; //Länge m
+d = 0.20; //Durchmesser
 meshThickness = L / 10; 
-gridsize = L / 10;
+gridsize = L / 100;
  
 // Geometry
 Point(1) = {-L/2, -d/2, 0, gridsize};
