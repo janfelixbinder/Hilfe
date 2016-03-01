@@ -7,3 +7,8 @@ das Meshfile hat dann aber die Endung *.msh
 
 erzeugt ein 3d mesh dies wird für openfoam benötig, auch wenn es nur 2d ist
 gmsh -3 rohr2D.geo
+
+gmshToFoam naca5012_step3.msh
+
+checkMesh
+
