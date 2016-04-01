@@ -26,3 +26,16 @@ git clean -f -d .
 
 #kopiert dateien und verzeichniss in ein neues arbeitsverzeichnis
 git --work-tree=../rechterWinkel checkout HEAD -- .
+
+
+
+####   BRANCHE ############
+zeigt eine liste mit allen branches
+git branch
+
+legt branch laminarFlow an
+git branch laminarFlow
+
+wechselt in branch laminarFlow
+git checkout laminarFlow 
+
