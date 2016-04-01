@@ -1,0 +1,6 @@
+
+will man die Felder aus einer schon durchgeführten Simulation auf ein anderes Mesh, mit gleichem Volumen und gleichen patches übertragen, dann kann man folgenden Befehl benutzen:
+
+mapFields BGA160  -case BGA160_imesh/ -consistent -sourceTime latestTime
+
+besonders wichtig latestTime, sonst wird einfach time=0 benutzt. Dies ist meistens nicht nützlich. Transformation kann sehr lange dauern (mehr als eine Stunde von 4.6 millionen zellen auf 12 millionen)

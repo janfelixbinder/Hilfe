@@ -1,0 +1,90 @@
+
+Fluss durch Fläche (Volumenfluss) bestimmen
+-------------------------------------------
+
+
+Wenn man den Fluss durch eine beliebige (durch abgeschlossenes Volumen) Fläche bestimmt, muss diese Null sein.
+Das liegt daran, dass das Volumen in dem die Simulation abläuft konstant ist, zumindest wenn man nur ein Medium betrachtet.
+
+Will man nun trotzdem etwas über den Fluss sagen, muss man zuerst das U Feld manuell bearbeiten.
+Dazu habe ich ein Skript erstell mit dem Namen: manipulate_field.py
+
+Mit diesem Skript kann man zum Beispiel die z-Komponente des U Feldes verändern.
+Uz = abs(Uz)
+if Uz < 0 dann Uz=0
+oder so etwas.
+
+Hat man dies erledigt und die Ausgabe in U gespeichert. Kann man mit einem zweiten Skript:
+createInput_xy_Ebene.py
+
+eine eingabedatei file für das folgende openfoam programm erstellen.
+
+execFlowFunctionObjects -dict file -latestTime
+
+
+die ausgabe kann dann bearbeitet und mit gnuplot weiterverarbeitet werden.
+
+
+
+
+Bilder mit Gnuplot erstellen
+----------------------------
+
+zuerst mit sample -dict file -latestTime
+
+eine Schicht extrahieren.
+
+nun muss diese noch mit awk, sort, vi bearbeitet werden
+
+dann kann man diese mit gnuplot ausgeben
+
+zum Beispiel mit: set pm3d
+
+
+file:
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.4.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      sampleDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+
+interpolationScheme cellPoint; //use cell-centre and vertex values
+
+fields
+(
+        U
+);
+
+surfaceFormat raw;
+//surfaceFormat vtk;
+
+surfaces
+(
+
+    schicht
+    {
+        type            plane;    // always triangulated
+
+        basePoint       (0.5 -0.5 0);
+        normalVector    (0 0 1);
+        interpolate     true;
+    }
+
+
+
+);
+
+schön wäre ausgabe als vtk. ich weiss nur nicht wie man dieses Format weiterverarbeitet.
+
