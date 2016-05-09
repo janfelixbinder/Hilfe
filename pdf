@@ -14,3 +14,7 @@ pdfjam bademeister.pdf '1' --a5paper --landscape --outfile t.pdf
 
 #Booklet erstellen A4->A5
 pdfbook dateiname.pdf
+
+
+Programm zum Teilen und Zusammenfügen von pdf-Seiten
+pdfsam

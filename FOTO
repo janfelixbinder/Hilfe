@@ -5,7 +5,7 @@ gphoto2  -F x -I sec --capture-image
 
 
 #verkleinern mit convert
-for i in *.JPG ; do convert $i -resize 10% small/$i ; done
+for i in *.JPG ; do convert $i -auto-orient -resize 10% small/$i ; done
 
 
 
