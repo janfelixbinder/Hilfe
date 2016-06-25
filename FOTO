@@ -53,3 +53,19 @@ rsync -av --stats /media/felix/EOS_DIGITAL/DCIM/100CANON/ .
 
 
 convert -density 1000 emil_4x2.pdf emil_4x2.jpg
+
+#Fotos verlustfrei komprimieren
+jpegoptim *
+
+
+#skaliert die fotos auf etwa die angegebene pixel grösse
+for i in *.JPG ; do convert $i -auto-orient -resize 1976400@ small/$i ; done
+
+#verkleinert, wenn bild grösser als 1600x1400 ist
+for i in *.JPG ; do convert $i -auto-orient -resize "1600>x1400>" 2/$i ; done
+
+#exif tags löschen
+for i in *.JPG ; do exiftool -exif:all= $i ; done
+
+#autor hinzufügen
+exiftool -artist=http://binder24.com *
